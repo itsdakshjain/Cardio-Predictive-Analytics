@@ -26,6 +26,14 @@ I performed Cross-Validation on the top-performing models to check for variance 
 
 **Decision:** I selected **Logistic Regression** for deployment. Even though KNN was close, Logistic Regression provided a higher mean CV accuracy and a lower standard deviation, making it the more "reliable" and "stable" choice for a clinical application.
 
+## 🛠️ Tech Stack & Pipeline
+- **Data Manipulation:** `Pandas` and `NumPy` for efficient data cleaning and transformation.
+- **Visualization:** `Seaborn` and `Matplotlib` for Exploratory Data Analysis (EDA).
+- **Preprocessing:** `Scikit-Learn`'s `StandardScaler` for numerical normalization.
+- **Validation:** 5-Fold Stratified Cross-Validation to ensure model stability.
+- **Deployment:** `Streamlit Cloud` for a high-performance web interface.
+- **Serialization:** `joblib` for model and scaler persistence.
+
 
 Cardio-Predictive-Analytics
 A practise project with eda, preprocessing , scaling, model building, streamlit app
