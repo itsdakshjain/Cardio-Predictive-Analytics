@@ -3,7 +3,8 @@ A clinical decision support tool built with Scikit-Learn and Streamlit to predic
 
 ### 🚀 [Live App Link](https://itsdakshjain-cardio-analytics.streamlit.app/)
 
-
+## 🧪 Model Selection
+I evaluated 5 different classification algorithms using an initial 80/20 train-test split. While **KNN** initially showed the highest accuracy on a single split, I moved to **5-Fold Cross-Validation** to ensure model stability across the entire dataset.
 
 
 Cardio-Predictive-Analytics
