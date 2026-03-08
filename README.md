@@ -15,6 +15,17 @@ I evaluated 5 different classification algorithms using an initial 80/20 train-t
 | SVM (RBF Kernel) | 86.41% | 0.8804 |
 | Decision Tree | 76.63% | 0.7817 |
 
+### 🛡️ Final Validation (5-Fold Cross-Validation)
+I performed Cross-Validation on the top-performing models to check for variance and generalization:
+
+| Model | CV Mean Accuracy | Std Deviation (σ) |
+| :--- | :--- | :--- |
+| **Logistic Regression** | **84.74%** | **0.0264** |
+| KNN | 84.60% | 0.0302 |
+| Naive Bayes | 83.92% | 0.0207 |
+
+**Decision:** I selected **Logistic Regression** for deployment. Even though KNN was close, Logistic Regression provided a higher mean CV accuracy and a lower standard deviation, making it the more "reliable" and "stable" choice for a clinical application.
+
 
 Cardio-Predictive-Analytics
 A practise project with eda, preprocessing , scaling, model building, streamlit app
