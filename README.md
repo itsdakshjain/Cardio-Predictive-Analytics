@@ -34,6 +34,12 @@ I performed Cross-Validation on the top-performing models to check for variance 
 - **Deployment:** `Streamlit Cloud` for a high-performance web interface.
 - **Serialization:** `joblib` for model and scaler persistence.
 
+## ⚙️ Data Engineering Process
+To prepare the clinical data for the Logistic Regression model, I implemented the following:
+* **One-Hot Encoding:** Converted categorical clinical markers (like Chest Pain Type and ST Slope) into binary vectors to allow the model to interpret non-ordinal data.
+* **Feature Scaling:** Applied Z-score normalization to numerical features (Age, Cholesterol, BP) to ensure all features contribute equally to the model's decision boundary.
+* **Input Alignment:** Exported feature column names to a `.pkl` file to ensure the web app perfectly matches the model's expected input structure.
+
 
 Cardio-Predictive-Analytics
-A practise project with eda, preprocessing , scaling, model building, streamlit app
+A practise project .
