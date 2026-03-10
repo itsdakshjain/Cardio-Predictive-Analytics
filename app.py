@@ -47,3 +47,47 @@ def get_user_input():
     return data
 
 user_data = get_user_input()
+
+# 3. MAIN DASHBOARD UI
+st.title("❤️ Heart Disease Predictive Analytics")
+
+# Display Metrics
+m1, m2, m3 = st.columns(3)
+m1.metric("Current Age", f"{user_data['Age']}y")
+m2.metric("Cholesterol", user_data['Cholesterol'])
+m3.metric("Heart Rate", user_data['MaxHR'])
+
+st.divider()
+
+# 4. PREDICTION LOGIC
+if st.button("Analyze Risk Profile", use_container_width=True):
+    # Create DataFrame and Reorder Columns to match model
+    input_df = pd.DataFrame([user_data])[all_columns]
+    
+    # Scale and Predict
+    scaled_data = scaler.transform(input_df)
+    prob = model.predict_proba(scaled_data)[0][1] * 100
+    
+    # Result Display
+    if prob > 50:
+        st.error(f"### High Risk Detected: {prob:.1f}% probability")
+        st.warning("Recommendation: Immediate clinical consultation advised.")
+    else:
+        st.success(f"### Low Risk Detected: {prob:.1f}% probability")
+        st.info("Recommendation: Maintain current lifestyle and regular checkups.")
+
+# 5. VISUALIZATIONS
+st.subheader("📊 Comparative Analysis")
+v1, v2 = st.columns(2)
+
+with v1:
+    fig1, ax1 = plt.subplots()
+    plt.bar(["Patient", "Target"], [user_data['Cholesterol'], 200], color=['#e63946', '#457b9d'])
+    ax1.set_title("Cholesterol Comparison")
+    st.pyplot(fig1)
+
+with v2:
+    fig2, ax2 = plt.subplots()
+    plt.bar(["Patient", "Target"], [user_data['MaxHR'], 170], color=['#2a9d8f', '#e9c46a'])
+    ax2.set_title("Heart Rate Capacity")
+    st.pyplot(fig2)
