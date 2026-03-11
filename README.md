@@ -40,6 +40,53 @@ To prepare the clinical data for the Logistic Regression model, I implemented th
 * **Feature Scaling:** Applied Z-score normalization to numerical features (Age, Cholesterol, BP) to ensure all features contribute equally to the model's decision boundary.
 * **Input Alignment:** Exported feature column names to a `.pkl` file to ensure the web app perfectly matches the model's expected input structure.
 
+## 📁 Project Structure
+- `app.py`: Streamlit dashboard code with dynamic `os` pathing.
+- `heart_model.pkl`: Trained Logistic Regression "brain".
+- `scaler.pkl`: Pre-fitted scaler for real-time inference.
+- `columns.pkl`: List of features to maintain one-hot encoding order.
+- `requirements.txt`: Python dependencies (pandas, scikit-learn, streamlit).
+
+---
 
 Cardio-Predictive-Analytics
 A practise project .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
