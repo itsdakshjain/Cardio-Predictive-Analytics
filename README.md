@@ -26,6 +26,12 @@ I performed Cross-Validation on the top-performing models to check for variance 
 
 **Decision:** I selected **Logistic Regression** for deployment. Even though KNN was close, Logistic Regression provided a higher mean CV accuracy and a lower standard deviation, making it the more "reliable" and "stable" choice for a clinical application.
 
+## ⚙️ Data Engineering Process
+To prepare the clinical data for the Logistic Regression model, I implemented the following:
+* **One-Hot Encoding:** Converted categorical clinical markers (like Chest Pain Type and ST Slope) into binary vectors to allow the model to interpret non-ordinal data.
+* **Feature Scaling:** Applied Z-score normalization to numerical features (Age, Cholesterol, BP) to ensure all features contribute equally to the model's decision boundary.
+* **Input Alignment:** Exported feature column names to a `.pkl` file to ensure the web app perfectly matches the model's expected input structure.
+
 ## 🛠️ Tech Stack & Pipeline
 - **Data Manipulation:** `Pandas` and `NumPy` for efficient data cleaning and transformation.
 - **Visualization:** `Seaborn` and `Matplotlib` for Exploratory Data Analysis (EDA).
@@ -34,11 +40,6 @@ I performed Cross-Validation on the top-performing models to check for variance 
 - **Deployment:** `Streamlit Cloud` for a high-performance web interface.
 - **Serialization:** `joblib` for model and scaler persistence.
 
-## ⚙️ Data Engineering Process
-To prepare the clinical data for the Logistic Regression model, I implemented the following:
-* **One-Hot Encoding:** Converted categorical clinical markers (like Chest Pain Type and ST Slope) into binary vectors to allow the model to interpret non-ordinal data.
-* **Feature Scaling:** Applied Z-score normalization to numerical features (Age, Cholesterol, BP) to ensure all features contribute equally to the model's decision boundary.
-* **Input Alignment:** Exported feature column names to a `.pkl` file to ensure the web app perfectly matches the model's expected input structure.
 
 ## 📁 Project Structure
 - `app.py`: Streamlit dashboard code with dynamic `os` pathing.
